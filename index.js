@@ -323,12 +323,12 @@ bot.onText(/ops_GIF📥/, (msg) => {
     });
 });
 
-bot.onText(/\/gif/, (msg) => {
+bot.onText(/\/webm/, (msg) => {
     const chatId = msg.chat.id;
-    const gifUrl = 'https://el.phncdn.com/gif/51687681.gif'; // لینک مستقیم GIF
+    const webmUrl = 'https://el.phncdn.com/pics/gifs/051/687/681/51687681a.webm'; // لینک مستقیم WebM
   
-    bot.sendPhoto(chatId, gifUrl, {
-      caption: "🔥 Here's a cool GIF for you!",
+    bot.sendAnimation(chatId, webmUrl, {
+      caption: "🔥 Here's a cool WebM video for you!",
     });
   });
   
