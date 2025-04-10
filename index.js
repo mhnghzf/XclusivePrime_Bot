@@ -227,7 +227,7 @@ bot.on('callback_query', (query) => {
   if (data === '/note') {
     fs.readFile('assets/public/note/note.txt', 'utf8', (err, content) => {
       if (err) {
-        bot.sendMessage(chatId, '❌ خطا در خواندن فایل.');
+        bot.sendMessage(chatId, '❌');
         console.error('Error:', err);
         return;
       }
@@ -235,7 +235,7 @@ bot.on('callback_query', (query) => {
       bot.sendMessage(chatId, content);
     });
 
-    bot.answerCallbackQuery(query.id); // بستن لودینگ
+    bot.answerCallbackQuery(query.id); 
   }
 });
 
@@ -326,7 +326,7 @@ bot.on('callback_query', (query) => {
     const data = query.data;
 
     if (data === '/vids') {
-        const message = 'Comming Soon...';
+        const message = 'Comming Soon... https://mega.nz/folder/iV8lUJQR#1IYa2qew_AyrpOMTAbdfsg .';
         bot.sendMessage(chatID, message);
     }
 
