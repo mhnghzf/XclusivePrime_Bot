@@ -115,19 +115,19 @@ bot.onText(/\/ops_stikers/i, (msg) => {
     const chatID = msg.chat.id;
 
     const stickers = [
-        "assets/stikers/7475866139/2.webm",
-        "assets/stikers/7475866139/3.webm",
-        "assets/stikers/7475866139/4.webm",
-        "assets/stikers/7475866139/5.webm",
-        "assets/stikers/7475866139/6.webm",
-        "assets/stikers/7475866139/7.webm",
-        "assets/stikers/7475866139/8.webm",
-        "assets/stikers/7475866139/9.webm",
-        "assets/stikers/7475866139/11.webm",
-        "assets/stikers/7475866139/12.webm",
-        "assets/stikers/7475866139/13.webm",
-        "assets/stikers/7475866139/14.webm",
-        "assets/stikers/7475866139/15.webm"
+        "assets/private/stikers/1.webm",
+        "assets/private/stikers/12.webm",
+        "assets/private/stikers/13.webm",
+        "assets/private/stikers/14.webm",
+        "assets/private/stikers/15.webm",
+        "assets/private/stikers/16.webm",
+        "assets/private/stikers/17.webm",
+        "assets/private/stikers/18.webm",
+        "assets/private/stikers/2.webm",
+        "assets/private/stikers/21.webm",
+        "assets/private/stikers/22.webm",
+        "assets/private/stikers/23.webm",
+        "assets/private/stikers/24.webm"
     ];
 
     stickers.forEach((stickerPath) => {
@@ -231,19 +231,19 @@ bot.onText("ops_Stikers📥", (msg) => {
     const chatID = msg.chat.id;
 
     const stickers = [
-        "assets/stikers/7475866139/2.webm",
-        "assets/stikers/7475866139/3.webm",
-        "assets/stikers/7475866139/4.webm",
-        "assets/stikers/7475866139/5.webm",
-        "assets/stikers/7475866139/6.webm",
-        "assets/stikers/7475866139/7.webm",
-        "assets/stikers/7475866139/8.webm",
-        "assets/stikers/7475866139/9.webm",
-        "assets/stikers/7475866139/11.webm",
-        "assets/stikers/7475866139/12.webm",
-        "assets/stikers/7475866139/13.webm",
-        "assets/stikers/7475866139/14.webm",
-        "assets/stikers/7475866139/15.webm"
+        "assets/private/stikers/1.webm",
+        "assets/private/stikers/12.webm",
+        "assets/private/stikers/13.webm",
+        "assets/private/stikers/14.webm",
+        "assets/private/stikers/15.webm",
+        "assets/private/stikers/16.webm",
+        "assets/private/stikers/17.webm",
+        "assets/private/stikers/18.webm",
+        "assets/private/stikers/2.webm",
+        "assets/private/stikers/21.webm",
+        "assets/private/stikers/22.webm",
+        "assets/private/stikers/23.webm",
+        "assets/private/stikers/24.webm"
     ];
 
     stickers.forEach((stickerPath) => {
