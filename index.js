@@ -176,9 +176,7 @@ bot.on('callback_query', (query) => {
     const chatID = query.message.chat.id;
     const data = query.data;
 
-    
     if (data === '/music') {
-       
         const songs = [
             {
                 title: "Look At Me!",
@@ -228,16 +226,16 @@ bot.on('callback_query', (query) => {
                 file: "assets/public/music/1_7 - Alright - Kendrick Lamar (320).mp3",
                 thumb: "assets/public/cover/Alright .jpg",
                 caption: ".GYM."
-            },
+            }
+            
         ];
 
-       
         songs.forEach((song) => {
-            bot.sendAudio(chatID, song.filePath, {
-                caption: `${song.title} by ${song.artist}`,  
+            bot.sendAudio(chatID, song.file, {
+                caption: `${song.title} by ${song.performer}`,  
                 title: song.title,  
-                performer: song.artist,  
-                thumb: song.coverPath  
+                performer: song.performer,  
+                thumb: song.thumb  
             }).then(() => {
                 console.log(`${song.title} sent!`);
             }).catch((error) => {
@@ -246,6 +244,10 @@ bot.on('callback_query', (query) => {
         });
     }
 });
+
+
+
+
 
 
 bot.on('callback_query', (query) => {
