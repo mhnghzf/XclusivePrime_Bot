@@ -46,12 +46,70 @@ bot.onText(/\/pin/i, (msg) => {
 
 bot.onText(/\/music/i, (msg) => {
     const chatID = msg.chat.id;
+    
+    const musicList = [
+        {
+            title: "Look At Me!",
+            performer: "XXXTENTACION",
+            file: "assets/public/music/1_1 - Look At Me! - XXXTENTACION (320).mp3",
+            thumb: "assets/public/cover/Look At Me! .jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "Mockingbird",
+            performer: "Eminem",
+            file: "assets/public/music/1_12 - Mockingbird - Eminem (320).mp3",
+            thumb: "assets/public/cover/Mockingbird .jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "MIDDLE CHILD",
+            performer: "J. Cole",
+            file: "assets/public/music/1_1 - MIDDLE CHILD - J. Cole (320).mp3",
+            thumb: "assets/public/cover/MIDDLE CHILD.jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "MOTTO",
+            performer: "NF",
+            file: "assets/public/music/1_2 - MOTTO - NF (320).mp3",
+            thumb: "assets/public/cover/MOTTO .jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "The Box",
+            performer: "Roddy Ricch",
+            file: "assets/public/music/1_2 - The Box - Roddy Ricch (320).mp3",
+            thumb: "assets/public/cover/The Box .jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "8 Mile",
+            performer: "Eminem",
+            file: "assets/public/music/1_3 - 8 Mile (From 8 Mile Soundtrack) - Eminem (320).mp3",
+            thumb: "assets/public/cover/8 Mile.jpg",
+            caption: ".GYM."
+        },
+        {
+            title: "Kendrick Lamar",
+            performer: "Alright",
+            file: "assets/public/music/1_7 - Alright - Kendrick Lamar (320).mp3",
+            thumb: "assets/public/cover/Alright .jpg",
+            caption: ".GYM."
+        },
+    ];
 
-bot.sendAudio(chatID, "assets/music/I Feel Good (I Got You) - James Brown (320).mp3", {
-    title: "I Feel Goo",
-    caption: "James Brown (320)",
-    thumb: "assets/pics/images.jpg"
-})})
+    
+    musicList.forEach((music) => {
+        bot.sendAudio(chatID, music.file, {
+            title: music.title,
+            performer: music.performer,
+            thumb: music.thumb,
+            caption: music.caption
+        });
+    });
+});
+
 
 bot.onText(/\/ops_stikers/i, (msg) => {
     const chatID = msg.chat.id;
