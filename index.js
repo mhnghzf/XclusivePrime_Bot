@@ -23,7 +23,7 @@ bot.onText(/\/start/i, (msg) => {
                 [
                     { text: 'Pin📌', callback_data: '/pin'},
                     { text: 'Music🎧', callback_data: '/music'},
-                    { text: 'Note', callback_data: '/note'}
+                    { text: 'Note🎇', callback_data: '/note'}
                 ]
             ]
         }
