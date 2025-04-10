@@ -221,24 +221,53 @@ bot.on('callback_query', (query) => {
 //ooops_area-------------------------------------------------------------------------------------------------------
 
 //command_ooops
+const userStates = {};
+const VALID_USERNAME = 'admin';
+const VALID_PASSWORD = '1234';
+
 bot.onText(/\/member_only/i, (msg) => {
-    const message = 'welcome!';
     const chatID = msg.chat.id;
+    userStates[chatID] = { step: 'awaiting_username' };
+    bot.sendMessage(chatID, '👤 لطفاً یوزرنیم خود را وارد کنید:');
+});
 
-    const inlinekeyboard = {
-        reply_markup: {
-            inline_keyboard: [
-                [
-                    { text: 'Gifs(.mp4)📥', callback_data: '/gifs' },
-                    { text: 'stikers📥', callback_data: '/stikers' },
-                    { text: 'Vids📥', callback_data: '/vids' },
-                    { text: 'pics📥', callback_data: '/ops_pics' }
-                ]
-            ]
+bot.on('message', (msg) => {
+    const chatID = msg.chat.id;
+    const text = msg.text;
+
+    if (!userStates[chatID]) return;
+    const state = userStates[chatID];
+
+    if (state.step === 'awaiting_username') {
+        state.username = text;
+        state.step = 'awaiting_password';
+        bot.sendMessage(chatID, '🔒 حالا پسورد رو وارد کن:');
+    } else if (state.step === 'awaiting_password') {
+        state.password = text;
+
+        if (state.username === VALID_USERNAME && state.password === VALID_PASSWORD) {
+            // دسترسی داده شد، حالا منو رو بفرست
+            const message = '✅ خوش اومدی!';
+            const inlinekeyboard = {
+                reply_markup: {
+                    inline_keyboard: [
+                        [
+                            { text: 'Gifs(.mp4)📥', callback_data: '/gifs' },
+                            { text: 'stikers📥', callback_data: '/stikers' },
+                            { text: 'Vids📥', callback_data: '/vids' },
+                            { text: 'pics📥', callback_data: '/ops_pics' }
+                        ]
+                    ]
+                }
+            };
+            bot.sendMessage(chatID, message, inlinekeyboard);
+        } else {
+            bot.sendMessage(chatID, '❌ یوزرنیم یا پسورد اشتباهه!');
         }
-    };
 
-    bot.sendMessage(chatID, message, inlinekeyboard);
+        // پاک‌سازی وضعیت
+        delete userStates[chatID];
+    }
 });
 
 //action_ooops
