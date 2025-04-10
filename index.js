@@ -22,7 +22,8 @@ bot.onText(/\/start/i, (msg) => {
             inline_keyboard: [
                 [
                     { text: 'Pin📌', callback_data: '/pin'},
-                    { text: 'Music🎧', callback_data: '/music'}
+                    { text: 'Music🎧', callback_data: '/music'},
+                    { text: 'Note', callback_data: '/note'}
                 ]
             ]
         }
@@ -216,6 +217,25 @@ bot.on('callback_query', (query) => {
     }
 });
 
+
+bot.on('callback_query', (query) => {
+    const chatId = query.message.chat.id;
+    const data = query.data;
+  
+    if (data === '/note') {
+      fs.readFile('assets/public/note/note.txt', 'utf8', (err, content) => {
+        if (err) {
+          bot.sendMessage(chatId, '❌ خطا در خواندن لیست کانال‌ها.');
+          console.error(err);
+          return;
+        }
+  
+        bot.sendMessage(chatId, content);
+      });
+  
+      bot.answerCallbackQuery(query.id); // بستن لودینگ
+    }
+  });
 
 
 //ooops_area-------------------------------------------------------------------------------------------------------
