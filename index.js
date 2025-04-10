@@ -21,8 +21,8 @@ bot.onText(/\/start/i, (msg) => {
         reply_markup: {
             inline_keyboard: [
                 [
-                    { text: 'Pin', callback_data: '/pin'},
-                    { text: 'Music', callback_data: '/music'}
+                    { text: 'Pin📌', callback_data: '/pin'},
+                    { text: 'Music🎧', callback_data: '/music'}
                 ]
             ]
         }
