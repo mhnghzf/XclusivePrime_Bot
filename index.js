@@ -182,35 +182,35 @@ bot.on('callback_query', (query) => {
                 title: "Look At Me!",
                 performer: "XXXTENTACION",
                 file: "assets/public/music/1_1 - Look At Me! - XXXTENTACION (320).mp3",
-                thumb: "assets/public/cover/Look At Me!.jpg",
+                thumb: "assets/public/cover/Look At Me! .jpg",
                 caption: ".GYM."
             },
             {
                 title: "Mockingbird",
                 performer: "Eminem",
                 file: "assets/public/music/1_12 - Mockingbird - Eminem (320).mp3",
-                thumb: "assets/public/cover/Mockingbird.jpg",
+                thumb: "assets/public/cover/Mockingbird .jpg",
                 caption: ".GYM."
             },
             {
                 title: "MIDDLE CHILD",
                 performer: "J. Cole",
                 file: "assets/public/music/1_1 - MIDDLE CHILD - J. Cole (320).mp3",
-                thumb: "assets/public/cover/MIDDLE CHILD.jpg",
+                thumb: "assets/public/cover/MIDDLE CHILD .jpg",
                 caption: ".GYM."
             },
             {
                 title: "MOTTO",
                 performer: "NF",
                 file: "assets/public/music/1_2 - MOTTO - NF (320).mp3",
-                thumb: "assets/public/cover/MOTTO.jpg",
+                thumb: "assets/public/cover/MOTTO .jpg",
                 caption: ".GYM."
             },
             {
                 title: "The Box",
                 performer: "Roddy Ricch",
                 file: "assets/public/music/1_2 - The Box - Roddy Ricch (320).mp3",
-                thumb: "assets/public/cover/The Box.jpg",
+                thumb: "assets/public/cover/The Box .jpg",
                 caption: ".GYM."
             },
             {
@@ -224,14 +224,14 @@ bot.on('callback_query', (query) => {
                 title: "Kendrick Lamar",
                 performer: "Alright",
                 file: "assets/public/music/1_7 - Alright - Kendrick Lamar (320).mp3",
-                thumb: "assets/public/cover/Alright.jpg",
+                thumb: "assets/public/cover/Alright .jpg",
                 caption: ".GYM."
             },
             {
                 title: "FreeStyle J.Cole & DaBaby...",
                 performer: "J.Cole & DaBaby...",
                 file: "assets/public/music/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.mp3",
-                thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.jpg",
+                thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan .jpg",
                 caption: ".GYM."
             }
             
