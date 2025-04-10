@@ -306,16 +306,13 @@ bot.onText("ops_Stikers📥", (msg) => {
     });
 }); 
 
-bot.onText(/ops_GIF📥/, (msg) => {
+bot.onText("ops_GIF📥", (msg) => {
     const chatID = msg.chat.id;
 
     const gifs = [
 
         { type: 'animation', media: 'assets/private/gifs/36427201a.webm' },
-        { type: 'animation', media: 'assets/private/gifs/9.mp4' },
-        { type: 'animation', media: '' },
-        { type: 'animation', media: '' },
-        { type: 'animation', media: '' }
+        { type: 'animation', media: 'assets/private/gifs/9.mp4' }
     ];
 
     bot.sendMediaGroup(chatID, gifs).catch(err => {
