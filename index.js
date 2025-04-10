@@ -66,7 +66,7 @@ bot.onText(/\/music/i, (msg) => {
             title: "MIDDLE CHILD",
             performer: "J. Cole",
             file: "assets/public/music/1_1 - MIDDLE CHILD - J. Cole (320).mp3",
-            thumb: "assets/public/cover/MIDDLE CHILD.jpg",
+            thumb: "assets/public/cover/MIDDLE CHILD .jpg",
             caption: ".GYM."
         },
         {
@@ -97,6 +97,13 @@ bot.onText(/\/music/i, (msg) => {
             thumb: "assets/public/cover/Alright .jpg",
             caption: ".GYM."
         },
+        {
+            title: "FreeStyle J.Cole & DaBaby...",
+            performer: "J.Cole & DaBaby...",
+            file: "assets/public/music/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.mp3",
+            thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.jpg",
+            caption: ".GYM."
+        }
     ];
 
     
@@ -231,7 +238,7 @@ bot.on('callback_query', (query) => {
                 title: "FreeStyle J.Cole & DaBaby...",
                 performer: "J.Cole & DaBaby...",
                 file: "assets/public/music/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.mp3",
-                thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan .jpg",
+                thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.jpg",
                 caption: ".GYM."
             }
             
@@ -299,23 +306,28 @@ bot.onText("ops_Stikers📥", (msg) => {
     });
 }); 
 
-bot.onText("ops_GIF📥", (msg) => {
+bot.onText(/ops_GIF📥/, (msg) => {
     const chatID = msg.chat.id;
 
-    const videos = [
-        { type: 'video', media: 'assets/stikers/7475866138/1.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/2.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/3.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/4.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/5.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/6.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/7.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/8.mp4' },
-        { type: 'video', media: 'assets/stikers/7475866138/9.mp4' }
+    const gifs = [
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51696331.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51572091.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/26706611.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51687681.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51648831.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51672041.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/51701331.gif' },
+        { type: 'animation', media: 'https://el.phncdn.com/gif/40799851.gif' },
+        { type: 'animation', media: '' },
+        { type: 'animation', media: '' },
+        { type: 'animation', media: '' },
+        { type: 'animation', media: '' },
+        { type: 'animation', media: '' },
     ];
 
-    bot.sendMediaGroup(chatID, videos).catch(err => {
-        console.error("❌ Failed to send videos:", err.message);
+    bot.sendMediaGroup(chatID, gifs).catch(err => {
+        console.error("❌ Failed to send GIFs:", err.message);
     });
 });
+
 
