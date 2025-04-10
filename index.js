@@ -22,8 +22,7 @@ bot.onText(/\/start/i, (msg) => {
             inline_keyboard: [
                 [
                     { text: 'Pin', callback_data: '/pin'},
-                    { text: 'Music', callback_data: '/music'},
-                    { text: 'Member Only', callback_data:'/secure'}   
+                    { text: 'Music', callback_data: '/music'}
                 ]
             ]
         }
@@ -116,48 +115,6 @@ bot.onText(/\/music/i, (msg) => {
         });
     });
 });
-
-
-bot.onText(/\/ops_stikers/i, (msg) => {
-    const chatID = msg.chat.id;
-
-    const stickers = [
-        "assets/private/stikers/1.webm",
-        "assets/private/stikers/12.webm",
-        "assets/private/stikers/13.webm",
-        "assets/private/stikers/14.webm",
-        "assets/private/stikers/15.webm",
-        "assets/private/stikers/16.webm",
-        "assets/private/stikers/17.webm",
-        "assets/private/stikers/18.webm",
-        "assets/private/stikers/2.webm",
-        "assets/private/stikers/21.webm",
-        "assets/private/stikers/22.webm",
-        "assets/private/stikers/23.webm",
-        "assets/private/stikers/24.webm"
-    ];
-
-    stickers.forEach((stickerPath) => {
-        bot.sendSticker(chatID, stickerPath).catch(err => {
-            console.error("❌ Failed to send:", stickerPath, err.message);
-        });
-    });
-});
-
-bot.onText(/\/secure/i, (msg) => {
-    const chatID = msg.chat.id;
-
-    const keyboard = {
-        reply_markup: {
-            one_time_keyboard: true,
-                keyboard: [
-                    ["ops_Stikers📥", "ops_GIF📥"],
-                    ["ops_Pics📥"]
-                ]
-        }
-    }
-    bot.sendMessage(chatID,"What you want from me, lil' homie?", keyboard)
-})
 
 //Query
 bot.on('callback_query', (query) => {
@@ -259,81 +216,118 @@ bot.on('callback_query', (query) => {
     }
 });
 
+
+
+//ooops_area-------------------------------------------------------------------------------------------------------
+
+//command_ooops
+bot.onText(/\/member_only/i, (msg) => {
+    const message = 'welcome!';
+    const chatID = msg.chat.id;
+
+    const inlinekeyboard = {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    { text: 'Gifs(.mp4)📥', callback_data: '/gifs' },
+                    { text: 'stikers📥', callback_data: '/stikers' },
+                    { text: 'Vids📥', callback_data: '/vids' },
+                    { text: 'pics📥', callback_data: '/ops_pics' }
+                ]
+            ]
+        }
+    };
+
+    bot.sendMessage(chatID, message, inlinekeyboard);
+});
+
+//action_ooops
 bot.on('callback_query', (query) => {
     const chatID = query.message.chat.id;
     const data = query.data;
 
-    if (data === '/secure') {
-        
-        const keyboard = {
-            reply_markup: {
-                one_time_keyboard: true,
-                keyboard: [
-                    ["ops_Stikers📥", "ops_GIF📥"],
-                    ["ops_Pics📥"]
-                ]
-            }
-        };
+    if (data === '/stikers') {
+        const stickers = [
+            "assets/private/stikers/1.webm",
+            "assets/private/stikers/12.webm",
+            "assets/private/stikers/13.webm",
+            "assets/private/stikers/14.webm",
+            "assets/private/stikers/15.webm",
+            "assets/private/stikers/16.webm",
+            "assets/private/stikers/17.webm",
+            "assets/private/stikers/18.webm",
+            "assets/private/stikers/2.webm",
+            "assets/private/stikers/21.webm",
+            "assets/private/stikers/22.webm",
+            "assets/private/stikers/23.webm",
+            "assets/private/stikers/24.webm"
+        ];
 
-        bot.sendMessage(chatID, "What you want from me, lil' homie?", keyboard);
-    }
-});
-
-//action button
-bot.onText("ops_Stikers📥", (msg) => {
-    const chatID = msg.chat.id;
-
-    const stickers = [
-        "assets/private/stikers/1.webm",
-        "assets/private/stikers/12.webm",
-        "assets/private/stikers/13.webm",
-        "assets/private/stikers/14.webm",
-        "assets/private/stikers/15.webm",
-        "assets/private/stikers/16.webm",
-        "assets/private/stikers/17.webm",
-        "assets/private/stikers/18.webm",
-        "assets/private/stikers/2.webm",
-        "assets/private/stikers/21.webm",
-        "assets/private/stikers/22.webm",
-        "assets/private/stikers/23.webm",
-        "assets/private/stikers/24.webm"
-    ];
-
-    stickers.forEach((stickerPath) => {
-        bot.sendSticker(chatID, stickerPath).catch(err => {
-            console.error("❌ Failed to send:", stickerPath, err.message);
-        });
-    });
-}); 
-
-bot.onText(/\/hey/i , (msg) => {
-    const chatID = msg.chat.id;
-
-    console.log("📩 Command received from:", chatID);
-
-    const videos = [
-        'assets/private/gifs/36427201a.webm',
-        'assets/private/gifs/9.mp4'
-    ];
-
-    videos.forEach(videoPath => {
-        const fullPath = path.join(__dirname, videoPath);
-        console.log("📁 Checking file:", fullPath);
-
-        // چک کن فایل وجود داره یا نه
-        fs.access(fullPath, fs.constants.F_OK, (err) => {
-            if (err) {
-                console.error(`❌ File not found: ${fullPath}`);
-                return;
-            }
-
-            console.log("✅ File exists, sending video...");
-
-            bot.sendVideo(chatID, fs.createReadStream(fullPath)).then(() => {
-                console.log(`✅ Sent: ${videoPath}`);
-            }).catch(err => {
-                console.error(`❌ Failed to send ${videoPath}:`, err.message);
+        stickers.forEach((stickerPath) => {
+            bot.sendSticker(chatID, stickerPath).catch(err => {
+                console.error("❌ Failed to send:", stickerPath, err.message);
             });
         });
-    });
+    }
+
+    bot.answerCallbackQuery(query.id);
 });
+
+bot.on('callback_query', (query) => {
+    const chatID = query.message.chat.id;
+    const data = query.data;
+
+    if (data === '/gifs') {
+        const videos = [
+            { type: 'video', media: 'assets/private/gifs/1.mp4' },
+            { type: 'video', media: 'assets/private/gifs/2.mp4' },
+            { type: 'video', media: 'assets/private/gifs/3.mp4' },
+            { type: 'video', media: 'assets/private/gifs/4.mp4' },
+            { type: 'video', media: 'assets/private/gifs/5.mp4' },
+            { type: 'video', media: 'assets/private/gifs/6.mp4' },
+            { type: 'video', media: 'assets/private/gifs/7.mp4' },
+            { type: 'video', media: 'assets/private/gifs/8.mp4' },
+            { type: 'video', media: 'assets/private/gifs/9.mp4' }
+        ];
+
+        bot.sendMediaGroup(chatID, videos).catch(err => {
+            console.error("❌ Error sending videos:", err);
+        });
+    }
+
+    bot.answerCallbackQuery(query.id);
+});
+
+bot.on('callback_query', (query) => {
+    const chatID = query.message.chat.id;
+    const data = query.data;
+
+    if (data === '/vids') {
+        const message = 'Comming Soon...';
+        bot.sendMessage(chatID, message);
+    }
+
+    bot.answerCallbackQuery(query.id);
+});
+
+bot.on('callback_query', (query) => {
+    const chatID = query.message.chat.id;
+    const data = query.data;
+
+    if (data === '/ops_pics') {
+        const photos = [
+            { type: 'photo', media: 'https://cdni.pornpics.com/1280/7/302/22438799/22438799_037_daaf.jpg' },
+            { type: 'photo', media: 'https://cdni.pornpics.com/1280/7/180/86543980/86543980_095_ea9b.jpg' },
+            { type: 'photo', media: 'https://cdni.pornpics.com/1280/7/693/24590130/24590130_081_2ecb.jpg' },
+            { type: 'photo', media: 'https://cdni.pornpics.com/1280/7/581/47193408/47193408_080_fc7d.jpg' }
+        ];
+
+        bot.sendMediaGroup(chatID, photos).catch(err => {
+            console.error("❌ Failed to send photos:", err.message);
+        });
+    }
+
+    bot.answerCallbackQuery(query.id);
+});
+
+//ooops_area-------------------------------------------------------------------------------------------------------
