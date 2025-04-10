@@ -310,19 +310,12 @@ bot.onText(/ops_GIF📥/, (msg) => {
     const chatID = msg.chat.id;
 
     const gifs = [
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51696331.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51572091.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/26706611.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51687681.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51648831.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51672041.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/51701331.gif' },
-        { type: 'animation', media: 'https://el.phncdn.com/gif/40799851.gif' },
+
+        { type: 'animation', media: 'https://www.pornhub.com/embedgif/36427201' },
         { type: 'animation', media: '' },
         { type: 'animation', media: '' },
         { type: 'animation', media: '' },
-        { type: 'animation', media: '' },
-        { type: 'animation', media: '' },
+        { type: 'animation', media: '' }
     ];
 
     bot.sendMediaGroup(chatID, gifs).catch(err => {
