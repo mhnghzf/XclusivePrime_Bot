@@ -306,8 +306,10 @@ bot.onText("ops_Stikers📥", (msg) => {
     });
 }); 
 
-bot.onText(/\/gif/i , (msg) => {
+bot.onText(/ops_GIF📥/, (msg) => {
     const chatID = msg.chat.id;
+
+    console.log("📩 Command received from:", chatID);
 
     const videos = [
         'assets/private/gifs/36427201a.webm',
@@ -315,12 +317,23 @@ bot.onText(/\/gif/i , (msg) => {
     ];
 
     videos.forEach(videoPath => {
-        const fullPath = path.resolve(videoPath);
+        const fullPath = path.join(__dirname, videoPath);
+        console.log("📁 Checking file:", fullPath);
 
-        bot.sendVideo(chatID, fs.createReadStream(fullPath))
-            .catch(err => {
-                console.error(`❌ Failed to send video ${videoPath}:`, err.message);
+        // چک کن فایل وجود داره یا نه
+        fs.access(fullPath, fs.constants.F_OK, (err) => {
+            if (err) {
+                console.error(`❌ File not found: ${fullPath}`);
+                return;
+            }
+
+            console.log("✅ File exists, sending video...");
+
+            bot.sendVideo(chatID, fs.createReadStream(fullPath)).then(() => {
+                console.log(`✅ Sent: ${videoPath}`);
+            }).catch(err => {
+                console.error(`❌ Failed to send ${videoPath}:`, err.message);
             });
+        });
     });
 });
-  
