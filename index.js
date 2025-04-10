@@ -309,14 +309,18 @@ bot.onText("ops_Stikers📥", (msg) => {
 bot.onText("ops_GIF📥", (msg) => {
     const chatID = msg.chat.id;
 
-    const gifs = [
-
-        { type: 'animation', media: 'assets/private/gifs/36427201a.webm' },
-        { type: 'animation', media: 'assets/private/gifs/9.mp4' }
+    const videos = [
+        'assets/private/gifs/36427201a.webm',
+        'assets/private/gifs/9.mp4'
     ];
 
-    bot.sendMediaGroup(chatID, gifs).catch(err => {
-        console.error("❌ Failed to send GIFs:", err.message);
+    videos.forEach(videoPath => {
+        const fullPath = path.resolve(videoPath);
+
+        bot.sendVideo(chatID, fs.createReadStream(fullPath))
+            .catch(err => {
+                console.error(`❌ Failed to send video ${videoPath}:`, err.message);
+            });
     });
 });
   
