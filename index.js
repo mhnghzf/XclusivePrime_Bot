@@ -226,6 +226,13 @@ bot.on('callback_query', (query) => {
                 file: "assets/public/music/1_7 - Alright - Kendrick Lamar (320).mp3",
                 thumb: "assets/public/cover/Alright.jpg",
                 caption: ".GYM."
+            },
+            {
+                title: "FreeStyle J.Cole & DaBaby...",
+                performer: "J.Cole & DaBaby...",
+                file: "assets/public/music/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.mp3",
+                thumb: "assets/public/cover/Best_Freestyle_J_Cole,_DaBaby,_Juice_WRLD,_Lil_Baby,_Tory_Lan.jpg",
+                caption: ".GYM."
             }
             
         ];
