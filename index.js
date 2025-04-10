@@ -176,27 +176,68 @@ bot.on('callback_query', (query) => {
     const chatID = query.message.chat.id;
     const data = query.data;
 
+    
     if (data === '/music') {
-      
+       
         const songs = [
             {
-                filePath: 'assets/music/I Feel Good (I Got You) - James Brown (320).mp3', 
-                title: 'I Feel Good',  
-                artist: 'James Brown', 
-                coverPath: 'assets/pics/images.jpg' 
+                title: "Look At Me!",
+                performer: "XXXTENTACION",
+                file: "assets/public/music/1_1 - Look At Me! - XXXTENTACION (320).mp3",
+                thumb: "assets/public/cover/Look At Me! .jpg",
+                caption: ".GYM."
             },
             {
-                //add
+                title: "Mockingbird",
+                performer: "Eminem",
+                file: "assets/public/music/1_12 - Mockingbird - Eminem (320).mp3",
+                thumb: "assets/public/cover/Mockingbird .jpg",
+                caption: ".GYM."
+            },
+            {
+                title: "MIDDLE CHILD",
+                performer: "J. Cole",
+                file: "assets/public/music/1_1 - MIDDLE CHILD - J. Cole (320).mp3",
+                thumb: "assets/public/cover/MIDDLE CHILD.jpg",
+                caption: ".GYM."
+            },
+            {
+                title: "MOTTO",
+                performer: "NF",
+                file: "assets/public/music/1_2 - MOTTO - NF (320).mp3",
+                thumb: "assets/public/cover/MOTTO .jpg",
+                caption: ".GYM."
+            },
+            {
+                title: "The Box",
+                performer: "Roddy Ricch",
+                file: "assets/public/music/1_2 - The Box - Roddy Ricch (320).mp3",
+                thumb: "assets/public/cover/The Box .jpg",
+                caption: ".GYM."
+            },
+            {
+                title: "8 Mile",
+                performer: "Eminem",
+                file: "assets/public/music/1_3 - 8 Mile (From 8 Mile Soundtrack) - Eminem (320).mp3",
+                thumb: "assets/public/cover/8 Mile.jpg",
+                caption: ".GYM."
+            },
+            {
+                title: "Kendrick Lamar",
+                performer: "Alright",
+                file: "assets/public/music/1_7 - Alright - Kendrick Lamar (320).mp3",
+                thumb: "assets/public/cover/Alright .jpg",
+                caption: ".GYM."
             },
         ];
 
        
         songs.forEach((song) => {
             bot.sendAudio(chatID, song.filePath, {
-                caption: `${song.title} by ${song.artist}`,  //Song description
-                title: song.title,  //Song title
-                performer: song.artist,  //Artist
-                thumb: song.coverPath  //Song cover
+                caption: `${song.title} by ${song.artist}`,  
+                title: song.title,  
+                performer: song.artist,  
+                thumb: song.coverPath  
             }).then(() => {
                 console.log(`${song.title} sent!`);
             }).catch((error) => {
@@ -205,6 +246,7 @@ bot.on('callback_query', (query) => {
         });
     }
 });
+
 
 bot.on('callback_query', (query) => {
     const chatID = query.message.chat.id;
