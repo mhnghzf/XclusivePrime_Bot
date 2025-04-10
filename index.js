@@ -306,7 +306,7 @@ bot.onText("ops_Stikers📥", (msg) => {
     });
 }); 
 
-bot.onText("ops_GIF📥", (msg) => {
+bot.onText(/\/gif/i , (msg) => {
     const chatID = msg.chat.id;
 
     const videos = [
