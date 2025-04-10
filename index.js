@@ -323,17 +323,10 @@ bot.onText(/ops_GIF📥/, (msg) => {
     });
 });
 
-bot.onText(/\/sendgf/, (msg) => {
+bot.onText(/\/sendlin/, (msg) => {
     const chatId = msg.chat.id;
-    const gifUrl = 'https://www.pornhub.com/embedgif/36427201';
+    const link = 'https://www.pornhub.com/embedgif/36427201';
   
-    // ارسال گیف به کاربر
-    bot.sendAnimation(chatId, gifUrl)
-      .then(() => {
-        console.log('گیف ارسال شد');
-      })
-      .catch((err) => {
-        console.error('خطا در ارسال گیف:', err);
-      });
+    // ارسال لینک به کاربر
+    bot.sendMessage(chatId, `این لینک مورد نظر شماست: ${link}`);
   });
-
