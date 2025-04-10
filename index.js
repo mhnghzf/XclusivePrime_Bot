@@ -323,4 +323,11 @@ bot.onText(/ops_GIF📥/, (msg) => {
     });
 });
 
+bot.onText(/\/sendlink1/, (msg) => {
+    const chatId = msg.chat.id;
+    const link = 'https://www.pornhub.com/embedgif/36427201';
+  
+    // ارسال لینک به کاربر
+    bot.sendMessage(chatId, `این لینک مورد نظر شماست: ${link}`);
+  });
 
