@@ -311,8 +311,8 @@ bot.onText(/ops_GIF📥/, (msg) => {
 
     const gifs = [
 
-        { type: 'animation', media: 'https://www.pornhub.com/embedgif/36427201' },
-        { type: 'animation', media: '' },
+        { type: 'animation', media: 'assets/private/gifs/36427201a.webm' },
+        { type: 'animation', media: 'assets/private/gifs/9.mp4' },
         { type: 'animation', media: '' },
         { type: 'animation', media: '' },
         { type: 'animation', media: '' }
@@ -322,13 +322,4 @@ bot.onText(/ops_GIF📥/, (msg) => {
         console.error("❌ Failed to send GIFs:", err.message);
     });
 });
-
-bot.onText(/\/webm/, (msg) => {
-    const chatId = msg.chat.id;
-    const webmUrl = 'https://el.phncdn.com/pics/gifs/051/687/681/51687681a.webm'; // لینک مستقیم WebM
-  
-    bot.sendAnimation(chatId, webmUrl, {
-      caption: "🔥 Here's a cool WebM video for you!",
-    });
-  });
   
