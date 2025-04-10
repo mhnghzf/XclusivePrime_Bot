@@ -218,24 +218,27 @@ bot.on('callback_query', (query) => {
 });
 
 
+const fs = require('fs');
+
 bot.on('callback_query', (query) => {
-    const chatId = query.message.chat.id;
-    const data = query.data;
-  
-    if (data === '/note') {
-      fs.readFile('assets/public/note/note.txt', 'utf8', (err, content) => {
-        if (err) {
-          bot.sendMessage(chatId, '❌ خطا در خواندن لیست کانال‌ها.');
-          console.error(err);
-          return;
-        }
-  
-        bot.sendMessage(chatId, content);
-      });
-  
-      bot.answerCallbackQuery(query.id); // بستن لودینگ
-    }
-  });
+  const chatId = query.message.chat.id;
+  const data = query.data;
+
+  if (data === '/note') {
+    fs.readFile('assets/public/note/note.txt', 'utf8', (err, content) => {
+      if (err) {
+        bot.sendMessage(chatId, '❌ خطا در خواندن فایل.');
+        console.error('Error:', err);
+        return;
+      }
+
+      bot.sendMessage(chatId, content);
+    });
+
+    bot.answerCallbackQuery(query.id); // بستن لودینگ
+  }
+});
+
 
 
 //ooops_area-------------------------------------------------------------------------------------------------------
