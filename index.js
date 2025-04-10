@@ -327,7 +327,7 @@ bot.onText(/\/gif/, (msg) => {
     const chatId = msg.chat.id;
     const gifUrl = 'https://el.phncdn.com/gif/51687681.gif'; // لینک مستقیم GIF
   
-    bot.sendAnimation(chatId, gifUrl, {
+    bot.sendPhoto(chatId, gifUrl, {
       caption: "🔥 Here's a cool GIF for you!",
     });
   });
