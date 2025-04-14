@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '7731536567:AAFW_IHIXvXFDe9hlT5pswr9XoOakUfS4Mg';
 const bot = new TelegramBot(token, { polling: true });
 
-//Dashboard*
+//Dashboard-
 bot.onText(/\/start/i, (msg) => {
     const message = ".";
     const chatID = msg.chat.id;
@@ -12,7 +12,7 @@ bot.onText(/\/start/i, (msg) => {
             one_time_keyboard: true,
                 keyboard: [
                     ["Latest Updates & Views👀", "Xclusive Premium Access💎"],
-                    ["help🤓"]
+                    ["help"]
                 ]
         }
     };
