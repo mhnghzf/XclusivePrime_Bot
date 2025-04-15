@@ -12,7 +12,7 @@ bot.onText(/\/start/i, (msg) => {
             one_time_keyboard: true,
                 keyboard: [
                     ["Latest Updates & Views👀", "Xclusive Premium Access💎"],
-                    ["help"]
+                    ["help🤓"]
                 ]
         }
     };
